@@ -26,6 +26,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
 ::selection{background:rgba(224,185,106,.35)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
+/* page progress: a hairline of gold that fills as the story is read */
+.progress{position:fixed;left:0;top:0;z-index:60;height:2px;width:100%;transform-origin:left;transform:scaleX(var(--sp,0));background:linear-gradient(90deg,var(--gold-deep),var(--gold-2));pointer-events:none}
+html.reduce .progress{display:none}
+
 /* nav */
 .nav{position:fixed;inset:0 0 auto 0;z-index:50;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 var(--gutter);
   background:linear-gradient(to bottom,rgba(13,14,15,.86),rgba(13,14,15,0));transition:background .5s var(--ease)}

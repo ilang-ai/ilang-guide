@@ -50,6 +50,9 @@
       if (act._p !== p) { act._p = p; apply(act, p); }
     }
     if (nav) nav.classList.toggle('scrolled', window.scrollY > 24);
+    var doc = document.documentElement;
+    var total = doc.scrollHeight - vh;
+    doc.style.setProperty('--sp', (total > 0 ? clamp(window.scrollY / total, 0, 1) : 0).toFixed(4));
     ticking = false;
   }
   function onScroll() { if (!ticking) { ticking = true; window.requestAnimationFrame(frame); } }
