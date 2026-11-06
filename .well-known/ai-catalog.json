@@ -1,0 +1,53 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "ilang.guide",
+    "identifier": "did:web:ilang.guide",
+    "url": "https://ilang.guide"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:ilang.guide:api:hosts",
+      "displayName": "ilang.guide host guide API",
+      "type": "application/vnd.oai.openapi+json",
+      "url": "https://ilang.guide/openapi.json",
+      "representativeQueries": [
+        "怎么在 DeepSeek Harness 上用 iLang",
+        "哪些 Agent 宿主已经实测过 iLang 一键配置",
+        "给我贴给 DSH 的那句话",
+        "how do I set iLang up on my agent"
+      ]
+    },
+    {
+      "identifier": "urn:air:ilang.guide:document:dsh-twin",
+      "displayName": "DeepSeek Harness 配置孪生（iLang 工程书）",
+      "type": "text/markdown",
+      "url": "https://ilang.guide/dsh.ilang.md",
+      "representativeQueries": [
+        "按 ilang.guide/dsh 把我配好",
+        "把 DeepSeekHarness 装成本地 DSH 全套",
+        "DSH 装完怎么验收"
+      ]
+    },
+    {
+      "identifier": "urn:air:ilang.guide:skill:ilang-guide-setup",
+      "displayName": "ilang-guide-setup skill",
+      "type": "text/markdown",
+      "url": "https://ilang.guide/ai/skills/ilang-guide-setup/SKILL.md",
+      "representativeQueries": [
+        "an agent should configure its own host from ilang.guide",
+        "read the host twin and execute it step by step"
+      ]
+    },
+    {
+      "identifier": "urn:air:ilang.guide:server:ilang-mcp",
+      "displayName": "iLang MCP server",
+      "type": "application/mcp-server-card+json",
+      "url": "https://ilang.guide/.well-known/mcp/server-card.json",
+      "representativeQueries": [
+        "load iLang into this conversation",
+        "check whether this iLang book is valid"
+      ]
+    }
+  ]
+}

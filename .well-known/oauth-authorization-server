@@ -1,0 +1,36 @@
+{
+  "status": "under_construction",
+  "available": false,
+  "capabilities_status": "planned_contract_only",
+  "message": "Coming soon. Authentication is unavailable. Everything on ilang.guide is public and read-only and needs no credentials.",
+  "launch_date": null,
+  "launch_notice": "Launch date not announced.",
+  "agent_instructions": "::ILANG::v5.0\n::STATE{@AUTH, status:under_construction, available:false, launch_date:not_announced}\n::RULE{available=false⇒do_not_register_do_not_send_identity_do_not_request_tokens}\n::RULE{need_public_data⇒use_https://ilang.guide/api/agent/hosts_without_credentials}\n::RULE{retry⇒only_after_published_declaration_says_available=true}",
+  "issuer": "https://ilang.guide",
+  "authorization_endpoint": "https://ilang.guide/agent-auth/authorize",
+  "token_endpoint": "https://ilang.guide/agent-auth/token",
+  "jwks_uri": "https://ilang.guide/.well-known/jwks.json",
+  "grant_types_supported": ["authorization_code", "urn:ietf:params:oauth:grant-type:jwt-bearer"],
+  "response_types_supported": ["code"],
+  "code_challenge_methods_supported": ["S256"],
+  "scopes_supported": ["site:read"],
+  "poppy_domains": ["ilang.guide"],
+  "revocation_endpoint": "https://ilang.guide/agent-auth/revoke",
+  "device_authorization_endpoint": "https://ilang.guide/agent-auth/device",
+  "agent_auth": {
+    "status": "under_construction",
+    "available": false,
+    "capabilities_status": "planned_contract_only",
+    "skill": "https://ilang.guide/auth.md",
+    "register_uri": "https://ilang.guide/agent-auth/register",
+    "claim_uri": "https://ilang.guide/agent-auth/claim",
+    "identity_types_supported": ["anonymous"],
+    "anonymous": {
+      "status": "under_construction",
+      "available": false,
+      "capabilities_status": "planned_contract_only",
+      "credential_types_supported": ["access_token"],
+      "claim_uri": "https://ilang.guide/agent-auth/claim"
+    }
+  }
+}

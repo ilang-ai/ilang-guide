@@ -1,0 +1,152 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/server-card.json",
+  "serverInfo": {
+    "name": "ilang",
+    "version": "2.3.0",
+    "title": "iLang"
+  },
+  "description": "ilang.guide points to the official iLang MCP server (read-only, no authentication). Gives a model the official iLang: the runtime a model loads (about 18,600 tokens, verified against the canon's sha256), its syntax and vocabulary alone (about 18,000 characters) for writing and checking iLang, the full text for any section it leaves out, the canon grammar validator, lookup over the dictionary and the ilang.ai FAQ, and the two published iLang documents, SOUL 2.0 and Source Book 2.9, as files with version, DOI and sha256. Read-only, no authentication.",
+  "protocolVersion": "2025-06-18",
+  "endpoint": "https://mcp.ilang.ai/mcp",
+  "transport": {
+    "type": "streamable-http",
+    "url": "https://mcp.ilang.ai/mcp"
+  },
+  "capabilities": {
+    "tools": {
+      "listChanged": false
+    },
+    "resources": {
+      "listChanged": false
+    },
+    "prompts": {
+      "listChanged": false
+    }
+  },
+  "tools": [
+    {
+      "name": "ilang_runtime",
+      "description": "Load the official iLang runtime, once per conversation; media=true adds the media extension.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ilang_runtime_lite",
+      "description": "Load the syntax and vocabulary of iLang alone (verbs, aliases, modifiers, entities, declaration forms, error codes), word for word from the canon, about a fifth of the runtime.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ilang_full",
+      "description": "Read a section of the full specification that the core runtime leaves out, by heading.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ilang_validate",
+      "description": "Check iLang text with the canon grammar and registry validator; an unknown modifier (E302) may come back with did_you_mean.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ilang_lookup",
+      "description": "Look up an iLang verb, modifier, entity or declaration by name, alias or meaning.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ilang_faq",
+      "description": "Return the published FAQ entry closest to a question about the iLang protocol.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ilang_soul",
+      "description": "Return SOUL 2.0, a judgment layer for an AI's default persona, as the published iLang file with version, date, DOI and sha256; form=iml for the IML 0.5 form.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ilang_source_book",
+      "description": "Return Source Book 2.9, the engineering book every iLang engineering book is anchored to, as the published iLang file with version, date, DOI and sha256; form=iml for the IML 0.5 form.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ilang_book_check",
+      "description": "Run the Source Book's two code checks on an engineering book: A1, the marker opens and closes it; A2, the canon grammar validator reports zero errors and warnings. For agents without a shell.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    }
+  ],
+  "documentation": "https://ilang.ai/ai/",
+  "authentication": {
+    "required": false
+  },
+  "prompts": [
+    {
+      "name": "ilang",
+      "description": "Put the official iLang runtime in the conversation."
+    },
+    {
+      "name": "source_book",
+      "description": "Bring Source Book 2.9 into the conversation with a tutorial filled in; the host's own model writes BOOK.md and checks it with ilang_book_check."
+    }
+  ],
+  "resources": [
+    {
+      "uri": "ilang://runtime/core"
+    },
+    {
+      "uri": "ilang://runtime/full"
+    },
+    {
+      "uri": "ilang://runtime/media"
+    },
+    {
+      "uri": "ilang://products/soul"
+    },
+    {
+      "uri": "ilang://products/source-book"
+    },
+    {
+      "uri": "https://ilang.ai/ai/data.json"
+    }
+  ]
+}

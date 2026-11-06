@@ -99,6 +99,28 @@
     });
   });
 
+  // WebMCP: expose the host guide to agents that run in the browser (no-op where the API is absent)
+  (function () {
+    var hosts = [];
+    try { if (document.modelContext) hosts.push(document.modelContext); } catch (e) {}
+    try { if (navigator.modelContext && hosts.indexOf(navigator.modelContext) < 0) hosts.push(navigator.modelContext); } catch (e) {}
+    if (!hosts.length) return;
+    var ac = new AbortController();
+    var RO = { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false };
+    function arg(a) { if (typeof a === 'string') { try { return JSON.parse(a); } catch (e) { return {}; } } return a || {}; }
+    var tools = [
+      { name: 'ilang_guide_hosts', description: '[GET:@HOSTS|whr=host=name]=>[Ω] List the agent hosts ilang.guide covers, or look one up by id, name or alias. Returns evidence level, the sentence to paste, the page and the executable .ilang.md twin; not_found=true when nothing matches.',
+        annotations: RO,
+        inputSchema: { type: 'object', properties: { host: { type: 'string', description: 'Host id, name or alias, e.g. dsh, DeepSeek Harness; empty lists all' } } },
+        execute: async function (a) { a = arg(a); var r = await fetch('/api/agent/hosts?host=' + encodeURIComponent((a && a.host) || '')); return await r.json(); } }
+    ];
+    hosts.forEach(function (mc) {
+      if (typeof mc.registerTool === 'function') tools.forEach(function (t) { try { mc.registerTool(Object.assign({}, t, { signal: ac.signal }), { signal: ac.signal }); } catch (e) {} });
+      else if (typeof mc.provideContext === 'function') { try { mc.provideContext({ tools: tools }); } catch (e) {} }
+    });
+    window.addEventListener('pagehide', function () { try { ac.abort(); } catch (e) {} });
+  })();
+
   // host page: current section in the side index
   var toc = document.querySelector('.toc');
   if (toc && 'IntersectionObserver' in window) {

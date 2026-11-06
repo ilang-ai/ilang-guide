@@ -1,0 +1,21 @@
+{
+  "name": "ilang.guide Host Guide Agent",
+  "version": "0.1.0-planned",
+  "protocolVersion": "0.3.0",
+  "description": "Planned. The A2A JSON-RPC endpoint is not live yet and returns HTTP 503; use https://ilang.guide/api/agent/hosts for the host list and the .ilang.md twins, or the iLang MCP server at https://mcp.ilang.ai/mcp.",
+  "url": "https://ilang.guide/a2a",
+  "preferredTransport": "JSONRPC",
+  "supportedInterfaces": [{ "url": "https://ilang.guide/a2a", "transport": "JSONRPC" }],
+  "provider": { "organization": "iLang Inc.", "url": "https://ilang.ai" },
+  "capabilities": { "streaming": false, "pushNotifications": false, "stateTransitionHistory": false },
+  "defaultInputModes": ["text/plain"],
+  "defaultOutputModes": ["text/plain"],
+  "skills": [
+    {
+      "id": "host-guide",
+      "name": "Host guide lookup",
+      "description": "Find how to set iLang up on a given agent host: evidence level, the sentence to paste, the page and the executable twin (planned over A2A; live over HTTP).",
+      "tags": ["ilang", "agent-setup", "deepseek-harness"]
+    }
+  ]
+}

@@ -39,3 +39,4 @@ Content-Signal: search=yes,ai-train=yes,use=reference
 Allow: /
 
 Sitemap: https://ilang.guide/sitemap.xml
+Agentmap: https://ilang.guide/.well-known/ai-catalog.json

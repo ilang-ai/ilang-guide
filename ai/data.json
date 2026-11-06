@@ -1,0 +1,42 @@
+{
+  "site": "https://ilang.guide",
+  "updated": "2026-11-06",
+  "language": "zh",
+  "evidence_levels": {
+    "tested_by_maintainers": "实测：维护者在真机上走通并记下日期",
+    "user_reported": "用户回报：真实用户走通",
+    "untested": "待实测：还没人走通，不写「已适配」，不上页面"
+  },
+  "hosts": [
+    {
+      "id": "dsh",
+      "name": "DeepSeek Harness",
+      "aliases": ["DSH", "deepseek-harness", "DeepSeekHarness"],
+      "evidence_level": "tested_by_maintainers",
+      "evidence_date": "2026-11-06",
+      "host_version": "0.2.2-rc.1",
+      "platforms": ["windows", "macos", "linux"],
+      "kit": {
+        "name": "DeepSeekHarness",
+        "version": "1.0.29",
+        "repo": "https://github.com/adsorgcn/DeepSeekHarness",
+        "mirror": "https://gitee.com/monetize/DeepSeekHarness",
+        "doi": "10.5281/zenodo.23998664"
+      },
+      "page": "https://ilang.guide/dsh/",
+      "markdown": "https://ilang.guide/dsh/index.md",
+      "twin": "https://ilang.guide/dsh.ilang.md",
+      "agent_line": "按 ilang.guide/dsh 把我配好",
+      "the_line": "帮我把 https://github.com/adsorgcn/DeepSeekHarness 装成本地 DSH 全套：先按我的系统下载并运行仓库里的 bootstrap.ps1（Windows）或 bootstrap.sh（macOS、Linux），打不开 GitHub 就从 https://gitee.com/monetize/DeepSeekHarness 取同名文件；它默认只检测，缺什么软件列给我，逐个征得我同意后再从官方源安装；装完告诉我以后每个新窗口怎么一句话回到这里。",
+      "first_sentence": "先去读 https://runtime.ilang.app/ilang-latest.md（国内打不开就读 https://ilang.cn/runtime/ilang-latest.md），读完用三句话告诉我你学到了什么，再回来找我。",
+      "update_sentence": "把 DeepSeekHarness 的引擎更新到最新，不要动我的记忆",
+      "verify": "关掉这个窗口，重开一个，把那个文件夹选为工作区，什么都不说；它第一句应该汇报上次做到哪。看到了，就是装好了。",
+      "uninstall": "删掉那个文件夹，DSH 里把工作区换掉，就全没了；装过的只有你点头同意过的 Git 和 Python。"
+    },
+    { "id": "claude-code", "name": "Claude Code", "evidence_level": "untested" },
+    { "id": "codex", "name": "Codex", "evidence_level": "untested" },
+    { "id": "gemini-cli", "name": "Gemini CLI", "evidence_level": "untested" },
+    { "id": "grok-bot", "name": "Grok Bot", "evidence_level": "untested" },
+    { "id": "workbuddy", "name": "WorkBuddy", "evidence_level": "untested" }
+  ]
+}

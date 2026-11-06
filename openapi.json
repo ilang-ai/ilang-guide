@@ -1,0 +1,72 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "ilang.guide host guide API",
+    "version": "1.0.0",
+    "description": "只读。按宿主查「怎么在这个 Agent 上用 iLang」：证据级别、要贴的句子、人看的页面与 Agent 执行的 .ilang.md 孪生。不需要认证。数据源：https://ilang.guide/ai/data.json"
+  },
+  "servers": [{ "url": "https://ilang.guide" }],
+  "paths": {
+    "/api/agent/hosts": {
+      "get": {
+        "operationId": "hosts",
+        "summary": "列出宿主，或按 id、名字、别名查一个宿主",
+        "parameters": [
+          { "name": "host", "in": "query", "required": false, "schema": { "type": "string" }, "description": "宿主 id、名字或别名，例如 dsh、DeepSeek Harness、DSH；不传返回全部" }
+        ],
+        "responses": {
+          "200": {
+            "description": "匹配的宿主（可能为空；为空时 not_found=true）",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/HostsResult" } } }
+          }
+        }
+      }
+    },
+    "/api/agent/health": {
+      "get": {
+        "operationId": "health",
+        "summary": "服务健康",
+        "responses": { "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object", "properties": { "status": { "type": "string" }, "service": { "type": "string" }, "time": { "type": "string", "format": "date-time" } } } } } } }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Host": {
+        "type": "object",
+        "required": ["id", "name", "evidence_level"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "aliases": { "type": "array", "items": { "type": "string" } },
+          "evidence_level": { "type": "string", "enum": ["tested_by_maintainers", "user_reported", "untested"] },
+          "evidence_date": { "type": "string", "format": "date" },
+          "host_version": { "type": "string" },
+          "platforms": { "type": "array", "items": { "type": "string" } },
+          "kit": { "type": "object", "properties": { "name": { "type": "string" }, "version": { "type": "string" }, "repo": { "type": "string", "format": "uri" }, "mirror": { "type": "string", "format": "uri" }, "doi": { "type": "string" } } },
+          "page": { "type": "string", "format": "uri" },
+          "markdown": { "type": "string", "format": "uri" },
+          "twin": { "type": "string", "format": "uri", "description": "Agent 直接执行的 iLang 工程书" },
+          "agent_line": { "type": "string" },
+          "the_line": { "type": "string" },
+          "first_sentence": { "type": "string" },
+          "update_sentence": { "type": "string" },
+          "verify": { "type": "string" },
+          "uninstall": { "type": "string" },
+          "source_url": { "type": "string", "format": "uri" }
+        }
+      },
+      "HostsResult": {
+        "type": "object",
+        "properties": {
+          "query": { "type": ["string", "null"] },
+          "updated": { "type": "string", "format": "date" },
+          "evidence_levels": { "type": "object", "additionalProperties": { "type": "string" } },
+          "count": { "type": "integer" },
+          "not_found": { "type": "boolean" },
+          "hosts": { "type": "array", "items": { "$ref": "#/components/schemas/Host" } }
+        }
+      }
+    }
+  }
+}

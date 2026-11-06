@@ -15,9 +15,13 @@ function prefersMarkdown(accept) {
   return md.q > html || (md.q === html && md.pos < htmlPos);
 }
 
+const CANONICAL = 'https://ilang.guide';
+
 export async function onRequest(context) {
   const { request, next, env } = context;
   const url = new URL(request.url);
+  // One site, one host: www and the Pages preview host send visitors to the canonical one, path and query kept.
+  if (url.hostname === 'www.ilang.guide' || url.hostname.endsWith('.pages.dev')) return Response.redirect(CANONICAL + url.pathname + url.search, 301);
   const accept = request.headers.get('accept') || '';
   if (request.method === 'GET' && prefersMarkdown(accept)) {
     const p = url.pathname;

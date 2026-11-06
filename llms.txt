@@ -18,6 +18,11 @@ iLang 是什么见 https://ilang.ai/llms.txt （中文 https://ilang.cn/llms.txt
 
 Claude Code、Codex、Gemini CLI、Grok Bot、WorkBuddy：页面结构已定，等真机走通后才上页面。
 
+## 给 Agent 的接口
+
+- 宿主列表与查询：https://ilang.guide/api/agent/hosts （OpenAPI https://ilang.guide/openapi.json ，入口 https://ilang.guide/ai/ ）
+- 技能：https://ilang.guide/ai/skills/ilang-guide-setup/SKILL.md ；ARD 清单 https://ilang.guide/.well-known/ai-catalog.json ；MCP 卡 https://ilang.guide/.well-known/mcp/server-card.json
+
 ## 相关
 
 - 本站源码：https://github.com/ilang-ai/ilang-guide

@@ -1,5 +1,5 @@
 {
   "version": 1,
   "include": ["/*"],
-  "exclude": ["/assets/*", "/*.md", "/*.txt", "/*.xml", "/*.json", "/*.png", "/*.svg", "/*.ico", "/*.jpg", "/*.webp", "/*.css", "/*.js", "/*.woff", "/*.woff2"]
+  "exclude": ["/assets/*", "/.well-known/*", "/ai/data.json", "/ai/skills/*", "/*.md", "/*.txt", "/*.xml", "/*.json", "/*.ilang", "/*.png", "/*.svg", "/*.ico", "/*.jpg", "/*.webp", "/*.css", "/*.js", "/*.woff", "/*.woff2"]
 }

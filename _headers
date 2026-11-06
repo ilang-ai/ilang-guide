@@ -9,9 +9,32 @@
   X-Robots-Tag: noindex
   Access-Control-Allow-Origin: *
 /
-  Link: </index.md>; rel="alternate"; type="text/markdown", </llms.txt>; rel="llms-txt"; type="text/plain"
+  Link: </.well-known/api-catalog>; rel="api-catalog", </openapi.json>; rel="service-desc", </ai/>; rel="service-doc", </.well-known/ai-catalog.json>; rel="describedby", </index.md>; rel="alternate"; type="text/markdown", </llms.txt>; rel="llms-txt"; type="text/plain"
 /dsh/
-  Link: </dsh/index.md>; rel="alternate"; type="text/markdown", </dsh.ilang.md>; rel="alternate"; type="text/markdown"; title="agent twin", </llms.txt>; rel="llms-txt"; type="text/plain"
+  Link: </dsh/index.md>; rel="alternate"; type="text/markdown", </dsh.ilang.md>; rel="alternate"; type="text/markdown"; title="agent twin", </.well-known/api-catalog>; rel="api-catalog", </llms.txt>; rel="llms-txt"; type="text/plain"
+/.well-known/*
+  Access-Control-Allow-Origin: *
+/.well-known/*.json
+  Content-Type: application/json; charset=utf-8
+/.well-known/api-catalog
+  Content-Type: application/linkset+json; charset=utf-8
+/.well-known/oauth-authorization-server
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: no-store
+/.well-known/oauth-protected-resource
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: no-store
+/.well-known/http-message-signatures-directory
+  Content-Type: application/http-message-signatures-directory+json; charset=utf-8
+/openapi.json
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+/ai/*
+  Access-Control-Allow-Origin: *
+/ai/data.json
+  Content-Type: application/json; charset=utf-8
+/ai/index.ilang
+  Content-Type: text/markdown; charset=utf-8
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 /*

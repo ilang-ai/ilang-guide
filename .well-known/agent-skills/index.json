@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "ilang-guide-setup",
+      "type": "skill-md",
+      "description": "Set iLang up on the agent's own host from ilang.guide: look the host up, read its .ilang.md twin, plan first, ask the user per item, verify, and never claim a host is supported without evidence.",
+      "url": "https://ilang.guide/ai/skills/ilang-guide-setup/SKILL.md",
+      "digest": "sha256:d21c0d40f3268a9c07e850e9865d4bdff895b47295ca78ba7f73a8ba574ed4eb"
+    }
+  ]
+}

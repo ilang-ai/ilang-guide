@@ -1,0 +1,12 @@
+{
+  "status": "under_construction",
+  "available": false,
+  "capabilities_status": "planned_contract_only",
+  "message": "Coming soon. The public host guide API remains available without authentication.",
+  "launch_date": null,
+  "resource": "https://ilang.guide",
+  "planned_resource_endpoint": "https://ilang.guide/agent-auth/resource",
+  "authorization_servers": ["https://ilang.guide"],
+  "scopes_supported": ["site:read"],
+  "bearer_methods_supported": ["header"]
+}

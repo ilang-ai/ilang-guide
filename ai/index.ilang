@@ -1,0 +1,15 @@
+::ILANG::v5.0
+[TYPE:service_index][SITE:ilang.guide][DATE:2026-11-06]
+::STATE{@SITE, name:ilang.guide, role:host_setup_guides_for_ilang, license:MIT, lang:zh}
+::STATE{@ENTRY, url:https://ilang.guide/ai/, fmt:markdown}
+::STATE{@LLMS, url:https://ilang.guide/llms.txt, fmt:text}
+::STATE{@HOSTS, url:https://ilang.guide/api/agent/hosts, method:GET, param:host, auth:none}
+::STATE{@OPENAPI, url:https://ilang.guide/openapi.json}
+::STATE{@CATALOG, url:https://ilang.guide/.well-known/api-catalog, fmt:linkset}
+::STATE{@ARD, url:https://ilang.guide/.well-known/ai-catalog.json}
+::STATE{@SKILLS, url:https://ilang.guide/.well-known/agent-skills/index.json}
+::STATE{@MCP, url:https://mcp.ilang.ai/mcp, transport:streamable_http, card:https://ilang.guide/.well-known/mcp/server-card.json, auth:none}
+::STATE{@TWIN_DSH, url:https://ilang.guide/dsh.ilang.md, host:DeepSeek_Harness, evidence:tested_by_maintainers_2026-11-06}
+::STATE{@AUTH, url:https://ilang.guide/auth.md, status:under_construction, available:false}
+::STATE{@A2A, url:https://ilang.guide/.well-known/agent-card.json, status:planned, available:false}
+[READ:@ENTRY]=>[GET:@HOSTS|whr=host=name]=>[GET:@TWIN_DSH]=>[Ω]
