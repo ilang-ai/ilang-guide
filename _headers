@@ -1,0 +1,19 @@
+/sitemap.xml
+  Content-Type: application/xml
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+  X-Robots-Tag: noindex
+  Access-Control-Allow-Origin: *
+/*.md
+  Content-Type: text/markdown; charset=utf-8
+  X-Robots-Tag: noindex
+  Access-Control-Allow-Origin: *
+/
+  Link: </index.md>; rel="alternate"; type="text/markdown", </llms.txt>; rel="llms-txt"; type="text/plain"
+/dsh/
+  Link: </dsh/index.md>; rel="alternate"; type="text/markdown", </dsh.ilang.md>; rel="alternate"; type="text/markdown"; title="agent twin", </llms.txt>; rel="llms-txt"; type="text/plain"
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

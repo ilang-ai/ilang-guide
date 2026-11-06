@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DeepSeek Harness：一句话配好 · ilang.guide</title>
+<meta name="description" content="在 DeepSeek Harness（DSH）上用 iLang：贴一句话，它自己装齐记忆体、新手教程、一键安装、技能库。装前先问你，软件只从官方源装，默认本机模式什么都不上传。含验收时刻、第一件事、更新与卸载。">
+<link rel="canonical" href="https://ilang.guide/dsh/">
+<link rel="alternate" type="text/markdown" href="https://ilang.guide/dsh/index.md">
+<link rel="alternate" type="text/markdown" href="https://ilang.guide/dsh.ilang.md" title="Agent 孪生（iLang 工程书）">
+<link rel="icon" type="image/svg+xml" href="/assets/ilang-logo.svg">
+<link rel="apple-touch-icon" href="/assets/ilang-logo-120.png">
+<meta name="theme-color" content="#e9eaec">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ilang.guide">
+<meta property="og:title" content="DeepSeek Harness：一句话配好">
+<meta property="og:description" content="贴一句话，DSH 自己装齐记忆体、教程、安装、技能。装前先问你，只走官方源，默认本机模式。">
+<meta property="og:url" content="https://ilang.guide/dsh/">
+<meta property="og:image" content="https://ilang.guide/assets/ilang-logo-120.png">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/site.css?v=5">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TechArticle","@id":"https://ilang.guide/dsh/#article","headline":"DeepSeek Harness：一句话配好","inLanguage":"zh-CN","url":"https://ilang.guide/dsh/","datePublished":"2026-11-06","dateModified":"2026-11-06","author":{"@type":"Organization","name":"iLang Inc.","url":"https://ilang.ai/"},"publisher":{"@id":"https://ilang.ai/#org"},"isPartOf":{"@id":"https://ilang.guide/#site"},"about":{"@type":"SoftwareApplication","name":"DeepSeek Harness","applicationCategory":"DeveloperApplication"},"description":"在 DeepSeek Harness 上用 iLang：贴一句话，它自己装齐记忆体、新手教程、一键安装、技能库。"}
+</script>
+</head>
+<body class="paper">
+<a class="sr" href="#main">跳到内容</a>
+<header class="nav">
+  <a class="brand" href="/"><img src="/assets/ilang-logo.svg" alt="" width="26" height="26"><span><b>ilang.guide</b><i>iLang 指导站</i></span></a>
+  <nav class="links" aria-label="站内">
+    <a href="/#hosts">宿主</a>
+    <a class="hide-m" href="/dsh.ilang.md">孪生</a>
+    <a class="cta" href="#say">那句话</a>
+  </nav>
+</header>
+
+<main id="main" class="doc">
+  <div class="inner">
+    <aside class="toc" aria-label="本页目录">
+      <div class="t">本页</div>
+      <a href="#say">那句话</a>
+      <a href="#what">会发生什么</a>
+      <a href="#verify">验收时刻</a>
+      <a href="#first">第一件事</a>
+      <a href="#update">更新与每个新窗口</a>
+      <a href="#uninstall">卸载</a>
+      <a href="#memory">记忆存哪 · 国内网络</a>
+      <a href="#extras">进阶：免费全家桶</a>
+      <a href="#trouble">遇到问题</a>
+      <a href="#evidence">证据与版本</a>
+      <a href="#agent">给 Agent</a>
+    </aside>
+
+    <article>
+      <div class="doc-head">
+        <div class="eyebrow">宿主 01 · DeepSeek Harness</div>
+        <h1 class="h-big">一句话，<br>把 DSH 配好。</h1>
+        <p class="h-sub">你只做两件事：粘贴、点头。其余全自动——装环境先问你，放好全套，问几个问题认识你。软件只从官方源装；默认本机模式，什么都不上传。</p>
+        <div class="metas">
+          <span class="ok">实测 2026-11-06</span>
+          <span>DSH 0.2.2-rc.1（Developer Preview）</span>
+          <span>一键包 v1.0.29</span>
+          <span>Windows · macOS · Linux</span>
+        </div>
+      </div>
+
+      <section id="say">
+        <h2><small>01</small>那句话</h2>
+        <p>在任意 DSH 会话里，把下面这句原样贴给它。</p>
+        <div class="quote"><span class="q" id="the-line">帮我把 https://github.com/adsorgcn/DeepSeekHarness 装成本地 DSH 全套：先按我的系统下载并运行仓库里的 bootstrap.ps1（Windows）或 bootstrap.sh（macOS、Linux），打不开 GitHub 就从 https://gitee.com/monetize/DeepSeekHarness 取同名文件；它默认只检测，缺什么软件列给我，逐个征得我同意后再从官方源安装；装完告诉我以后每个新窗口怎么一句话回到这里。</span><button class="copybtn" data-copy="#the-line">复制</button></div>
+        <p>Windows 走 bootstrap.ps1，macOS 与 Linux 走 bootstrap.sh，由 DSH 按系统选。它默认<strong>只检测并打印计划</strong>，一个字节都不改；你点头之后才动手。</p>
+      </section>
+
+      <section id="what">
+        <h2><small>02</small>会发生什么</h2>
+        <p>模式就是 DSH 的审批模式：不需要审批的自动做，需要审批的问你。</p>
+        <table>
+          <thead><tr><th>步骤</th><th>模式</th></tr></thead>
+          <tbody>
+            <tr><td>检测环境（git / python / winget 有没有）</td><td><b>自动</b>，零改动</td></tr>
+            <tr><td>克隆仓库到本机、切进目录、AGENTS.md 注入、技能发现</td><td><b>自动</b></td></tr>
+            <tr><td><code>brain.py check</code> 验收、建立你的档案、写交接单</td><td><b>自动</b></td></tr>
+            <tr><td>安装 Git（git-scm.org 官方版）</td><td><b>需审批</b>：它问你「装吗？」，你点头才装</td></tr>
+            <tr><td>安装 Python 3.12（python.org 官方版）</td><td><b>需审批</b>：同上</td></tr>
+            <tr><td>其他一切动到系统的操作</td><td>一律先问</td></tr>
+          </tbody>
+        </table>
+        <p>所有软件只从官方源安装：winget 官方包 id（<code>Git.Git</code> / <code>Python.Python.3.12</code>）；winget 不可用时给官方下载链接，你点一下。</p>
+      </section>
+
+      <section id="verify">
+        <h2><small>03</small>验收时刻</h2>
+        <div class="callout"><p>关掉这个窗口，重开一个，把这个文件夹选成工作区，什么都不说；它第一句应该是<strong>汇报上次做到哪</strong>。看到了，就是装好了。</p></div>
+        <p>没看到，就把屏幕上的内容贴给你的 DSH。再贴一张截图问它「这是什么」，它答得出，就是模型配好了。</p>
+      </section>
+
+      <section id="first">
+        <h2><small>04</small>第一件事</h2>
+        <p>装好之后的第一句，永远是让它先去学 iLang，读完三句话汇报：</p>
+        <div class="quote"><span class="q" id="first-line">先去读 https://runtime.ilang.app/ilang-latest.md（国内打不开就读 https://ilang.cn/runtime/ilang-latest.md），读完用三句话告诉我你学到了什么，再回来找我。</span><button class="copybtn" data-copy="#first-line">复制</button></div>
+        <p>模型：新手就用 <strong>deepseek-flash</strong>——能看图、上下文 1M、便宜。Pro 更贵且不能看图，先不用。</p>
+        <div class="quote"><span class="q" id="model-line">去读 DeepSeek Harness 官方模型配置文档（docs/user/guide/providers.zh.md），然后帮我把模型配成 deepseek-flash，并用一句话告诉我为什么：它能看图、上下文 1M、便宜，新手够用；Pro 更贵且不能看图，先不用。需要我提供密钥就告诉我贴在哪；如果我是 DeepSeek 账号登录，就告诉我在模型选择里选 deepseek-flash 这一次就行。</span><button class="copybtn" data-copy="#model-line">复制</button></div>
+        <p>之后你只要记住：看图直接贴，想深一点说「认真想」。日常的句子全在仓库里的新手起手式。</p>
+      </section>
+
+      <section id="update">
+        <h2><small>05</small>更新与每个新窗口</h2>
+        <ul>
+          <li>把那个文件夹选为 DSH 工作区，开场自动汇报进度，零句话；</li>
+          <li>或一句话：<code>进我的记忆体目录，看看上次到哪了。</code></li>
+        </ul>
+        <p>更新引擎只认这句，它永远不碰你的记忆文件：</p>
+        <div class="quote"><span class="q" id="update-line">把 DeepSeekHarness 的引擎更新到最新，不要动我的记忆</span><button class="copybtn" data-copy="#update-line">复制</button></div>
+      </section>
+
+      <section id="uninstall">
+        <h2><small>06</small>卸载</h2>
+        <p>删掉那个文件夹，DSH 里把工作区换掉，就全没了。它装过的只有你点头同意过的 Git 和 Python，留着不碍事，要删也按官方方式删。</p>
+      </section>
+
+      <section id="memory">
+        <h2><small>07</small>记忆存在哪 · 国内网络</h2>
+        <p>默认<strong>本机模式</strong>：记忆只在你电脑的这个文件夹里，不需要 GitHub 账号，也什么都不上传。想换电脑接着用，再贴一句「把我的记忆体备份到我自己的私有仓库」，那时才需要 GitHub 账号和一个空的私有仓库。</p>
+        <p>连不上 GitHub 时：产品仓库自动切国内镜像 <a class="ext" href="https://gitee.com/monetize/DeepSeekHarness" target="_blank" rel="noopener">gitee.com/monetize/DeepSeekHarness</a>（与 GitHub 同源）；iLang 官方资料自动切 <a class="ext" href="https://ilang.cn" target="_blank" rel="noopener">ilang.cn</a>。克隆后自动装「记忆推送保护钩子」：私人记忆默认拦在本地不能推送，确认目标是你自己的私有仓库后才显式放行。</p>
+      </section>
+
+      <section id="extras">
+        <h2><small>08</small>进阶：免费全家桶（可选）</h2>
+        <p>不装也不影响记忆体。要装就贴这句，每件安装前先问你，全部官方源：</p>
+        <div class="quote"><span class="q" id="extras-line">帮我装免费全家桶：先跑 tools/free_station.py plan 看缺什么，再逐个征得我同意后从官方源安装；装完告诉我每件怎么用。</span><button class="copybtn" data-copy="#extras-line">复制</button></div>
+        <ul>
+          <li><strong>yt-dlp + FFmpeg</strong>：视频下载与转文字</li>
+          <li><strong>视频转文字</strong>：贴链接或文件，出文字和字幕，本地跑，不上传（首次约 160MB 模型，装前问你）</li>
+          <li><strong>Obsidian</strong>：装好后直接打开记忆文件夹就是你的笔记金库</li>
+          <li><strong>语音</strong>：零安装——DSH 自带语音输入（本地 SenseVoice），朗读用系统自带语音</li>
+          <li><strong>NotebookLM（海外）</strong>：零安装，需谷歌账号，国内网络打不开就跳过</li>
+        </ul>
+      </section>
+
+      <section id="trouble">
+        <h2><small>09</small>遇到问题</h2>
+        <p><strong>发图片它说看不了？</strong>一句话：设置 → 模型 → 切到 <code>deepseek-flash</code>。flash 原生能读图，一般人用它就够；不用装任何插件。</p>
+        <p><strong>装不上？</strong>先看版本：这页在 DeepSeek Harness 0.2.2-rc.1 上验证，DSH 还是 Developer Preview，官方说可能有破坏性变更。把屏幕上的内容原样贴给你的 DSH，让它去读官方文档再告诉你下一步。</p>
+      </section>
+
+      <section id="evidence">
+        <h2><small>10</small>证据与版本</h2>
+        <dl class="kv">
+          <dt>证据级别</dt><dd>实测 · 2026-11-06 · 维护者真机走通</dd>
+          <dt>宿主版本</dt><dd>DeepSeek Harness 0.2.2-rc.1</dd>
+          <dt>一键包版本</dt><dd>DeepSeekHarness v1.0.29 · DOI 10.5281/zenodo.23998664</dd>
+          <dt>仓库</dt><dd><a class="ext" href="https://github.com/adsorgcn/DeepSeekHarness" target="_blank" rel="noopener">github.com/adsorgcn/DeepSeekHarness</a></dd>
+          <dt>国内镜像</dt><dd><a class="ext" href="https://gitee.com/monetize/DeepSeekHarness" target="_blank" rel="noopener">gitee.com/monetize/DeepSeekHarness</a></dd>
+          <dt>本页源</dt><dd><a class="ext" href="https://github.com/ilang-ai/ilang-guide" target="_blank" rel="noopener">github.com/ilang-ai/ilang-guide</a></dd>
+        </dl>
+        <p class="muted" style="margin-top:14px">级别只有三档：实测（维护者真机走通并记日期）、用户回报（真实用户走通）、待实测（没人走通，不写「已适配」）。</p>
+      </section>
+
+      <section id="agent">
+        <h2><small>11</small>给 Agent</h2>
+        <p>不想自己贴？对你的 DSH 说这句，它会去读本页的孪生文件，按里面的步骤先出计划、逐项问你、装完验收：</p>
+        <div class="quote"><span class="q" id="agent-line">按 ilang.guide/dsh 把我配好</span><button class="copybtn" data-copy="#agent-line">复制</button></div>
+        <div class="files">
+          <a href="/dsh.ilang.md">/dsh.ilang.md <span>本页孪生 · iLang 工程书</span></a>
+          <a href="/dsh/index.md">/dsh/index.md <span>本页 Markdown</span></a>
+          <a href="/llms.txt">/llms.txt <span>站点索引</span></a>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="inner">
+    <div class="row">
+      <a href="/">ilang.guide</a>
+      <a href="https://ilang.ai" target="_blank" rel="noopener">ilang.ai</a>
+      <a href="https://ilang.cn" target="_blank" rel="noopener">ilang.cn</a>
+      <a href="https://github.com/ilang-ai/ilang-guide" target="_blank" rel="noopener">github.com/ilang-ai/ilang-guide</a>
+    </div>
+    <div class="row">© 2026 iLang Inc. · 页面有 Markdown 孪生，Accept: text/markdown 即可取。</div>
+  </div>
+</footer>
+<script src="/assets/site.js?v=5" defer></script>
+</body>
+</html>

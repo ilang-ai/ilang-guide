@@ -1,0 +1,25 @@
+# ilang.guide
+
+> iLang 官方指导站：怎么在你的 Agent 上用 iLang。一个宿主一页，人看页面，Agent 取 .ilang.md 孪生照做。首版中文。
+
+iLang 是什么见 https://ilang.ai/llms.txt （中文 https://ilang.cn/llms.txt ）。本站只回答一件事：在某个具体的 Agent 宿主上，贴哪句话、会发生什么、怎么验收、第一件事做什么、怎么更新、怎么卸载。
+
+## 宿主页
+
+- [DeepSeek Harness](https://ilang.guide/dsh/)：一句话满配——记忆体、新手教程、一键安装、技能库；装前先问、只走官方源、默认本机模式。证据级别：实测 2026-11-06（DSH 0.2.2-rc.1，一键包 v1.0.29）。Markdown：https://ilang.guide/dsh/index.md ；Agent 孪生：https://ilang.guide/dsh.ilang.md
+
+## Agent 怎么用本站
+
+- 用户说「按 ilang.guide/dsh 把我配好」时，取 https://ilang.guide/dsh.ilang.md 并按其中的 MODULE 执行；RUBRIC 是验收标准，BOUNDARY 是永远不做的事。
+- 每个 HTML 页都有 Markdown 孪生：同路径加 index.md，或请求时带 Accept: text/markdown。
+- 证据级别只有三档：实测（维护者真机走通并记日期）、用户回报（真实用户走通）、待实测（没人走通，不写「已适配」）。
+
+## 待实测的宿主
+
+Claude Code、Codex、Gemini CLI、Grok Bot、WorkBuddy：页面结构已定，等真机走通后才上页面。
+
+## 相关
+
+- 本站源码：https://github.com/ilang-ai/ilang-guide
+- iLang 官网：https://ilang.ai ；中文：https://ilang.cn
+- DeepSeek Harness 一键包：https://github.com/adsorgcn/DeepSeekHarness ；国内镜像：https://gitee.com/monetize/DeepSeekHarness
