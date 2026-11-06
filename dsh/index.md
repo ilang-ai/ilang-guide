@@ -85,6 +85,7 @@ Windows 走 bootstrap.ps1，macOS 与 Linux 走 bootstrap.sh，由 DSH 按系统
 - 仓库：https://github.com/adsorgcn/DeepSeekHarness
 - 国内镜像：https://gitee.com/monetize/DeepSeekHarness
 - 本页源：https://github.com/ilang-ai/ilang-guide
+- 本页国内镜像（备案域名，微信、QQ 里分享用它）：https://ilang.cn/guide/dsh/
 
 ## 11 给 Agent
 

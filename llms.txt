@@ -26,5 +26,6 @@ Claude Code、Codex、Gemini CLI、Grok Bot、WorkBuddy：页面结构已定，�
 ## 相关
 
 - 本站源码：https://github.com/ilang-ai/ilang-guide
+- 本站国内镜像（备案域名，静态文件，内容相同，canonical 指回本站）：https://ilang.cn/guide/ ；DSH 页 https://ilang.cn/guide/dsh/ ；孪生 https://ilang.cn/guide/dsh.ilang.md
 - iLang 官网：https://ilang.ai ；中文：https://ilang.cn
 - DeepSeek Harness 一键包：https://github.com/adsorgcn/DeepSeekHarness ；国内镜像：https://gitee.com/monetize/DeepSeekHarness

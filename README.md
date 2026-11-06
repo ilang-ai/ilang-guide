@@ -41,6 +41,7 @@ _headers _routes.json robots.txt sitemap.xml
 ## 相关
 
 - iLang 官网 https://ilang.ai ，中文 https://ilang.cn ，正典 https://github.com/ilang-ai/ilang-spec
+- 国内镜像 https://ilang.cn/guide/ ：备案域名，微信、QQ 里分享用它；由 ilang.cn 的构建脚本从本仓库生成，canonical 指回本站
 - DeepSeek Harness 一键包 https://github.com/adsorgcn/DeepSeekHarness （国内镜像 https://gitee.com/monetize/DeepSeekHarness ）
 
 MIT © 2026 iLang Inc.

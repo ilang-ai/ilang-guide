@@ -29,4 +29,5 @@ iLang 官方指导站：怎么在你的 Agent 上用 iLang。一个宿主一页�
 
 - iLang 官网：https://ilang.ai ，中文：https://ilang.cn
 - 本站源码：https://github.com/ilang-ai/ilang-guide
+- 本站国内镜像（备案域名，微信、QQ 里分享用它）：https://ilang.cn/guide/
 - DeepSeek Harness 一键包：https://github.com/adsorgcn/DeepSeekHarness （国内镜像 https://gitee.com/monetize/DeepSeekHarness ）
