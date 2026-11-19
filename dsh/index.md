@@ -10,7 +10,7 @@ Agent 孪生（iLang 工程书）：https://ilang.guide/dsh.ilang.md
 
 在任意 DSH 会话里，把下面这句原样贴给它：
 
-> 帮我装 iLang DSH 工具包，照 https://dsh.ilang.guide/install.md 做。
+> 帮我装 iLang DSH 工具包，照 https://ilang.cn/guide/dsh/install.md 做。
 
 Windows 走 bootstrap.ps1，macOS 与 Linux 走 bootstrap.sh，由 DSH 按系统选。它默认只检测并打印计划，一个字节都不改；你点头之后才动手。
 
